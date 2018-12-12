@@ -50,6 +50,10 @@ class Counters extends Component {
             value={wine.value}
             casePrice={wine.casePrice}
             selected={true}
+            name={wine.name}
+            size={wine.size}
+            region={wine.region}
+            country={wine.country}
           />
         ))}
       </div>

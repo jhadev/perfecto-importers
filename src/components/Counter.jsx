@@ -22,6 +22,7 @@ class Counter extends Component {
   };
 
   render() {
+    console.log("props", this.props);
     return (
       <React.Fragment>
         <span style={{ fontSize: 10 }} className={this.getBadgeClasses()}>
@@ -33,13 +34,16 @@ class Counter extends Component {
           }}
           className="btn btn-secondary btn-sm"
         >
-          Increment
+          Add to Total
         </button>
+        {/* 
+  
         <ul>
           {this.state.wines.map(wine => (
             <li key={wine}>{wine}</li>
           ))}
         </ul>
+        */}
       </React.Fragment>
     );
   }
