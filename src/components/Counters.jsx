@@ -10,7 +10,7 @@ class Counters extends Component {
     wines: [
       {
         id: 1,
-        name: "",
+        name: "Rosso",
         size: "750mL",
         region: "",
         country: "",
@@ -20,7 +20,7 @@ class Counters extends Component {
       },
       {
         id: 2,
-        name: "",
+        name: "Brunello",
         size: "750mL",
         region: "",
         country: "",
@@ -30,7 +30,7 @@ class Counters extends Component {
       },
       {
         id: 3,
-        name: "",
+        name: "Rose",
         size: "750mL",
         region: "",
         country: "",
@@ -38,7 +38,12 @@ class Counters extends Component {
         casePrice: 160,
         vintage: 2017
       }
-    ]
+    ],
+    totalPrice: 0
+  };
+
+  handleTotal = wineId => {
+    console.log("clicked", wineId);
   };
 
   render() {
@@ -46,15 +51,18 @@ class Counters extends Component {
       <div>
         {this.state.wines.map(wine => (
           <Counter
+            id={wine.id}
             key={wine.id}
             value={wine.value}
             casePrice={wine.casePrice}
-            selected={true}
             name={wine.name}
             size={wine.size}
             region={wine.region}
             country={wine.country}
-          />
+            onChange={this.handleTotal}
+          >
+            <h4>{wine.name}</h4>
+          </Counter>
         ))}
       </div>
     );

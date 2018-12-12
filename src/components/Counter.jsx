@@ -2,39 +2,53 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    wines: ["rosso", "brunello", "rose"]
+    value: this.props.value
   };
 
   formatCount = () => {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   };
 
   getBadgeClasses = () => {
     let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.state.value === 0 ? "warning" : "primary";
     return classes;
   };
 
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ value: this.state.value + 1 });
+  };
+
+  handleDecrement = () => {
+    this.setState({ value: this.state.value - 1 });
   };
 
   render() {
-    console.log("props", this.props);
+    console.log(this.props);
     return (
       <React.Fragment>
+        {this.props.children}
         <span style={{ fontSize: 10 }} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
         <button
-          onClick={() => {
-            this.handleIncrement();
-          }}
-          className="btn btn-secondary btn-sm"
+          onClick={() => this.handleIncrement()}
+          className="btn btn-success btn-sm m-2"
         >
-          Add to Total
+          +
+        </button>
+        <button
+          onClick={() => this.handleDecrement()}
+          className="btn btn-danger btn-sm text-center"
+        >
+          -
+        </button>
+        <button
+          onClick={() => this.props.onChange(this.props.id)}
+          className="btn btn-primary btn-sm text-center ml-2"
+        >
+          total
         </button>
         {/* 
   
