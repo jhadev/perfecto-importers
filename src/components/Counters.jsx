@@ -46,20 +46,46 @@ class Counters extends Component {
     console.log("clicked", wineId);
   };
 
+  handleReset = () => {
+    const wines = this.state.wines.map(wine => {
+      wine.value = 0;
+      return wine;
+    });
+    this.setState({ wines });
+  };
+
+  handleIncrement = wine => {
+    const wines = [...this.state.wines];
+    const index = wines.indexOf(wine);
+    wines[index] = { ...wine };
+    wines[index].value++;
+    console.log(wine);
+    this.setState({ wines });
+  };
+
+  handleDecrement = wine => {
+    const wines = [...this.state.wines];
+    const index = wines.indexOf(wine);
+    wines[index] = { ...wine };
+    wines[index].value--;
+    console.log(wine);
+    this.setState({ wines });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div>
+        <button onClick={this.handleReset} className="btn btn-primary m-2">
+          Reset
+        </button>
         {this.state.wines.map(wine => (
           <Counter
-            id={wine.id}
             key={wine.id}
-            value={wine.value}
-            casePrice={wine.casePrice}
-            name={wine.name}
-            size={wine.size}
-            region={wine.region}
-            country={wine.country}
             onChange={this.handleTotal}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            wine={wine}
           >
             <h4>{wine.name}</h4>
           </Counter>

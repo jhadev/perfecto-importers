@@ -1,28 +1,16 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = {
-    value: this.props.value
-  };
-
-  formatCount = () => {
-    const { value } = this.state;
+  formatCount() {
+    const { value } = this.props.wine;
     return value === 0 ? "Zero" : value;
-  };
+  }
 
-  getBadgeClasses = () => {
+  getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.wine.value === 0 ? "warning" : "primary";
     return classes;
-  };
-
-  handleIncrement = () => {
-    this.setState({ value: this.state.value + 1 });
-  };
-
-  handleDecrement = () => {
-    this.setState({ value: this.state.value - 1 });
-  };
+  }
 
   render() {
     console.log(this.props);
@@ -33,13 +21,13 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={() => this.handleIncrement()}
+          onClick={() => this.props.onIncrement(this.props.wine)}
           className="btn btn-success btn-sm m-2"
         >
           +
         </button>
         <button
-          onClick={() => this.handleDecrement()}
+          onClick={() => this.props.onDecrement(this.props.wine)}
           className="btn btn-danger btn-sm text-center"
         >
           -
