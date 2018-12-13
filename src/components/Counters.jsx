@@ -19,7 +19,8 @@ class Counters extends Component {
               wine={wine}
             >
               <h4>{wine.name}</h4>
-              <p>{wine.casePrice}</p>
+              <p>Case Price: ${wine.casePrice}</p>
+              <img className="wineImg" src={wine.image} alt="wineImg" />
             </Counter>
           </Card>
         ))}

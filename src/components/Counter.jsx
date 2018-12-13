@@ -16,26 +16,26 @@ class Counter extends Component {
     return (
       <React.Fragment>
         {this.props.children}
-        <span style={{ fontSize: 10 }} className={this.getBadgeClasses()}>
+        <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
         <button
           onClick={() => this.props.onIncrement(this.props.wine)}
-          className="btn btn-success btn-sm m-2"
+          className="btn btn-success"
         >
           +
         </button>
         <button
           onClick={() => this.props.onDecrement(this.props.wine)}
-          className="btn btn-danger btn-sm text-center"
+          className="btn btn-danger text-center ml-2"
         >
           -
         </button>
         <button
           onClick={() => this.props.onChange(this.props.id)}
-          className="btn btn-primary btn-sm text-center ml-2"
+          className="btn btn-primary text-center m-2"
         >
-          total
+          Total
         </button>
         {/* 
   
