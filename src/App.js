@@ -64,7 +64,6 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index] = { ...wine };
     wines[index].value++;
-    console.log(wine);
     this.setState({ wines });
   };
 
@@ -73,22 +72,26 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index] = { ...wine };
     wines[index].value--;
-    console.log(wine);
     this.setState({ wines });
   };
 
   render() {
+    console.log(this.state);
     return (
       <React.Fragment>
         <Navbar totalPrice={this.state.totalPrice} />
         <div className="main container">
-          <Counters
-            wines={this.state.wines}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-            onChange={this.handleTotal}
-          />
+          <div className="row">
+            <div className="col-md-6 col-12">
+              <Counters
+                wines={this.state.wines}
+                onReset={this.handleReset}
+                onIncrement={this.handleIncrement}
+                onDecrement={this.handleDecrement}
+                onChange={this.handleTotal}
+              />
+            </div>
+          </div>
         </div>
       </React.Fragment>
     );

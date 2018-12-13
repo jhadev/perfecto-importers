@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
+import Card from "@material-ui/core/Card";
 
 class Counters extends Component {
   render() {
@@ -9,15 +10,18 @@ class Counters extends Component {
           Reset
         </button>
         {this.props.wines.map(wine => (
-          <Counter
-            key={wine.id}
-            onChange={this.props.onChange}
-            onIncrement={this.props.onIncrement}
-            onDecrement={this.props.onDecrement}
-            wine={wine}
-          >
-            <h4>{wine.name}</h4>
-          </Counter>
+          <Card key={wine.id} className="wineCard m-2">
+            <Counter
+              key={wine.id}
+              onChange={this.props.onChange}
+              onIncrement={this.props.onIncrement}
+              onDecrement={this.props.onDecrement}
+              wine={wine}
+            >
+              <h4>{wine.name}</h4>
+              <p>{wine.casePrice}</p>
+            </Counter>
+          </Card>
         ))}
       </div>
     );
