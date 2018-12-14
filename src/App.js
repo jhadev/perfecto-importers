@@ -15,7 +15,8 @@ class App extends Component {
         value: 0,
         casePrice: 180,
         vintage: 2015,
-        image: "https://via.placeholder.com/200x200"
+        image: "https://via.placeholder.com/200x200",
+        total: 0
       },
       {
         id: 2,
@@ -26,7 +27,8 @@ class App extends Component {
         value: 0,
         casePrice: 565,
         vintage: 2012,
-        image: "https://via.placeholder.com/200x200"
+        image: "https://via.placeholder.com/200x200",
+        total: 0
       },
       {
         id: 3,
@@ -37,21 +39,18 @@ class App extends Component {
         value: 0,
         casePrice: 160,
         vintage: 2017,
-        image: "https://via.placeholder.com/200x200"
+        image: "https://via.placeholder.com/200x200",
+        total: 0
       }
     ],
     totalPrice: 1000
   };
 
-  handleTotal = () => {
-    const wines = this.state.wines.map(wine => {
-      return wines;
-    });
-
-    this.setState({
-      totalPrice: this.state.wines.casePrice * this.state.wines.value
-    });
-    console.log(this.state.totalPrice);
+  handleTotal = wine => {
+    const wines = [...this.state.wines];
+    const index = wines.indexOf(wine);
+    wines[index].total = wines[index].value * wines[index].casePrice;
+    this.setState({ wines });
   };
 
   handleReset = () => {
@@ -91,7 +90,7 @@ class App extends Component {
                 onReset={this.handleReset}
                 onIncrement={this.handleIncrement}
                 onDecrement={this.handleDecrement}
-                onChange={this.handleTotal}
+                onTotal={this.handleTotal}
               />
             </div>
           </div>

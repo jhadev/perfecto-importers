@@ -13,7 +13,7 @@ class Counters extends Component {
           <Card key={wine.id} className="wineCard m-2">
             <Counter
               key={wine.id}
-              onChange={this.props.onChange}
+              onTotal={this.props.onTotal}
               onIncrement={this.props.onIncrement}
               onDecrement={this.props.onDecrement}
               wine={wine}

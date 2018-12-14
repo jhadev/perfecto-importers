@@ -8,7 +8,10 @@ class Counter extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.props.wine.value === 0 ? "warning" : "primary";
+    classes +=
+      this.props.wine.value || this.props.wine.total === 0
+        ? "warning"
+        : "primary";
     return classes;
   }
 
@@ -16,6 +19,9 @@ class Counter extends Component {
     return (
       <React.Fragment>
         {this.props.children}
+        <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
+          ${this.props.wine.total}
+        </span>
         <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
@@ -32,7 +38,7 @@ class Counter extends Component {
           -
         </button>
         <button
-          onClick={() => this.props.onChange(this.props.id)}
+          onClick={() => this.props.onTotal(this.props.wine)}
           className="btn btn-primary text-center m-2"
         >
           Total
