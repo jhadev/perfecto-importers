@@ -17,7 +17,8 @@ class App extends Component {
         vintage: 2015,
         image: "https://via.placeholder.com/200x200",
         varietal: "Sangiovese",
-        notes: "good wine",
+        notes:
+          "good wine sdfsdfsdgsdfgfadgsdj kfhsjk dhfjkasdhfljhdj skfhjsdaklfhjsahfjka shdjfhsdjkfhsdjflsdhfks dhfsdjklafskfhjdskaf hsdjkhfsdjklajhfasdkfhlsdjakflhsdjka",
         total: 0
       },
       {

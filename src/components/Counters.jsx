@@ -9,6 +9,7 @@ class Counters extends Component {
         {this.props.wines.map(wine => (
           <Card key={wine.id} className="wineCard m-2">
             <Counter
+              className="counter"
               key={wine.id}
               onTotal={this.props.onTotal}
               onIncrement={this.props.onIncrement}
@@ -17,14 +18,34 @@ class Counters extends Component {
               wine={wine}
             >
               <h4 className="name">{wine.name}</h4>
-              <p>Size: {wine.size}</p>
-              <p>Vintage: {wine.vintage}</p>
-              <p>Country: {wine.country}</p>
-              <p>Region: {wine.region}</p>
-              <p>Varietal: {wine.varietal}</p>
-              <p>Tasting Notes: {wine.notes}</p>
-              <p>Case Price: ${wine.casePrice}</p>
-              <img className="wineImg" src={wine.image} alt="wineImg" />
+              <p>
+                <b>Tasting Notes:</b> {wine.notes}
+              </p>
+              <div className="row">
+                <div className="col-md-4 col-12">
+                  <p>
+                    <b>Size:</b> {wine.size}
+                  </p>
+                  <p>
+                    <b>Vintage:</b> {wine.vintage}
+                  </p>
+                  <p>
+                    <b>Country:</b> {wine.country}
+                  </p>
+                  <p>
+                    <b>Region:</b> {wine.region}
+                  </p>
+                  <p>
+                    <b>Varietal:</b> {wine.varietal}
+                  </p>
+                  <p>
+                    <b>Case Price:</b> ${wine.casePrice}
+                  </p>
+                </div>
+                <div className="col-md-8 col-12">
+                  <img className="wineImg" src={wine.image} alt="wineImg" />
+                </div>
+              </div>
             </Counter>
           </Card>
         ))}

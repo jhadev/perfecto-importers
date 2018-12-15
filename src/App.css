@@ -9,7 +9,7 @@
 
 p {
   font-size: 12px;
-  line-height: 0.5;
+  margin-bottom: 0px;
 }
 
 .name {
@@ -24,4 +24,18 @@ p {
   font-size: 10px !important;
   margin-top: -2px;
   font-weight: bold !important;
+}
+
+.counter-row {
+  margin-top: -100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .counter-row {
+    margin-top: 0px;
+  }
+
+  p {
+    line-height: 2;
+  }
 }

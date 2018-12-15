@@ -19,24 +19,31 @@ class Counter extends Component {
     return (
       <React.Fragment>
         {this.props.children}
-        <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
-          ${this.props.wine.total}
-        </span>
-        <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
-          {this.formatCount()} Cases
-        </span>
-        <button
-          onClick={() => this.props.onIncrement(this.props.wine)}
-          className="btn btn-success"
-        >
-          +
-        </button>
-        <button
-          onClick={() => this.props.onDecrement(this.props.wine)}
-          className="btn btn-danger text-center m-2"
-        >
-          -
-        </button>
+        <div className="row counter-row">
+          <div className="col-md-3 col-12">
+            <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
+              ${this.props.wine.total}
+            </span>
+            <span
+              style={{ fontSize: 14 }}
+              className="badge m-1 badge-secondary"
+            >
+              {this.formatCount()} Cases
+            </span>
+            <button
+              onClick={() => this.props.onIncrement(this.props.wine)}
+              className="btn btn-block btn-sm btn-success"
+            >
+              +
+            </button>
+            <button
+              onClick={() => this.props.onDecrement(this.props.wine)}
+              className="btn btn-danger btn-block btn-sm text-center"
+            >
+              -
+            </button>
+          </div>
+        </div>
         {/*
         <button
           onClick={() => this.props.onTotal(this.props.wine)}
