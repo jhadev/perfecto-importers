@@ -7,7 +7,7 @@ class Counter extends Component {
   }
 
   getBadgeClasses() {
-    let classes = "badge m-2 badge-";
+    let classes = "badge m-1 badge-";
     classes +=
       this.props.wine.value || this.props.wine.total === 0
         ? "warning"
@@ -23,7 +23,7 @@ class Counter extends Component {
           ${this.props.wine.total}
         </span>
         <span style={{ fontSize: 14 }} className={this.getBadgeClasses()}>
-          {this.formatCount()}
+          {this.formatCount()} Cases
         </span>
         <button
           onClick={() => this.props.onIncrement(this.props.wine)}
@@ -33,7 +33,7 @@ class Counter extends Component {
         </button>
         <button
           onClick={() => this.props.onDecrement(this.props.wine)}
-          className="btn btn-danger text-center ml-2"
+          className="btn btn-danger text-center m-2"
         >
           -
         </button>
