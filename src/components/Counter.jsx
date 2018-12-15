@@ -37,13 +37,14 @@ class Counter extends Component {
         >
           -
         </button>
+        {/*
         <button
           onClick={() => this.props.onTotal(this.props.wine)}
           className="btn btn-primary text-center m-2"
         >
           Total
         </button>
-        {/* 
+        
   
         <ul>
           {this.state.wines.map(wine => (

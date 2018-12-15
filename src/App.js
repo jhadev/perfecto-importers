@@ -57,7 +57,6 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index].total = wines[index].value * wines[index].casePrice;
     this.setState({ wines });
-    this.handleAllTotal();
   };
 
   handleReset = () => {
@@ -75,7 +74,10 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index] = { ...wine };
     wines[index].value++;
+    wines[index].total = wines[index].value * wines[index].casePrice;
+    const totalPrice = wines[0].total + wines[1].total + wines[2].total;
     this.setState({ wines });
+    this.setState({ totalPrice });
   };
 
   handleDecrement = wine => {
@@ -83,14 +85,17 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index] = { ...wine };
     wines[index].value--;
+    wines[index].total = wines[index].value * wines[index].casePrice;
+    const totalPrice = wines[0].total + wines[1].total + wines[2].total;
     this.setState({ wines });
+    this.setState({ totalPrice });
   };
 
-  handleAllTotal = () => {
+  /*handleAllTotal = () => {
     const wines = [...this.state.wines];
     const totalPrice = wines[0].total + wines[1].total + wines[2].total;
     this.setState({ totalPrice });
-  };
+  };*/
 
   render() {
     console.log(this.state);
