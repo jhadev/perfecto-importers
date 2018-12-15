@@ -6,9 +6,6 @@ class Counters extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.onReset} className="btn btn-primary m-2">
-          Reset
-        </button>
         {this.props.wines.map(wine => (
           <Card key={wine.id} className="wineCard m-2">
             <Counter

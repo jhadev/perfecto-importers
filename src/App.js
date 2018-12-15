@@ -96,7 +96,7 @@ class App extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
-        <Navbar totalPrice={this.state.totalPrice} />
+        <Navbar totalPrice={this.state.totalPrice} onReset={this.handleReset} />
         <div className="main container">
           <div className="row">
             <div className="col-md-6 col-12">

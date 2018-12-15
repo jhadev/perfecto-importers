@@ -9,6 +9,12 @@ class Navbar extends Component {
           <span className="badge badge-pill badge-secondary ml-6">
             Your Total: ${this.props.totalPrice}
           </span>
+          <button
+            onClick={this.props.onReset}
+            className="btn btn-primary btn-sm m-2"
+          >
+            Reset
+          </button>
         </span>
       </nav>
     );
