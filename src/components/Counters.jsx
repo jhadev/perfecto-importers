@@ -13,9 +13,10 @@ class Counters extends Component {
               onTotal={this.props.onTotal}
               onIncrement={this.props.onIncrement}
               onDecrement={this.props.onDecrement}
+              onChange={this.props.onChange}
               wine={wine}
             >
-              <h4>{wine.name}</h4>
+              <h4 className="name">{wine.name}</h4>
               <p>Size: {wine.size}</p>
               <p>Vintage: {wine.vintage}</p>
               <p>Country: {wine.country}</p>

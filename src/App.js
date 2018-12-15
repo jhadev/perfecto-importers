@@ -10,27 +10,27 @@ class App extends Component {
         id: 1,
         name: "Rosso",
         size: "750mL",
-        region: "",
-        country: "",
+        region: "Montalcino",
+        country: "Italy",
         value: 0,
         casePrice: 180,
         vintage: 2015,
         image: "https://via.placeholder.com/200x200",
-        varietal: "ok",
-        notes: "ok",
+        varietal: "Sangiovese",
+        notes: "good wine",
         total: 0
       },
       {
         id: 2,
         name: "Brunello",
         size: "750mL",
-        region: "",
-        country: "",
+        region: "Montalcino",
+        country: "Italy",
         value: 0,
         casePrice: 565,
         vintage: 2012,
         image: "https://via.placeholder.com/200x200",
-        varietal: "ok",
+        varietal: "Sangiovese",
         notes: "ok",
         total: 0
       },
@@ -38,13 +38,13 @@ class App extends Component {
         id: 3,
         name: "Rose",
         size: "750mL",
-        region: "",
-        country: "",
+        region: "Montalcino",
+        country: "Italy",
         value: 0,
         casePrice: 160,
         vintage: 2017,
         image: "https://via.placeholder.com/200x200",
-        varietal: "ok",
+        varietal: "Sangiovese",
         notes: "ok",
         total: 0
       }
@@ -57,6 +57,13 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index].total = wines[index].value * wines[index].casePrice;
     this.setState({ wines });
+  };
+
+  handleCasePrice = () => {
+    const wines = [...this.state.wines];
+    wines[0].casePrice =
+      wines[0].value <= 10 ? wines[0].casePrice : wines[0].casePrice * 0.85;
+    console.log(wines[0].casePrice);
   };
 
   handleReset = () => {
@@ -76,8 +83,8 @@ class App extends Component {
     wines[index].value++;
     wines[index].total = wines[index].value * wines[index].casePrice;
     const totalPrice = wines[0].total + wines[1].total + wines[2].total;
-    this.setState({ wines });
-    this.setState({ totalPrice });
+    this.setState({ wines, totalPrice });
+    //this.handleCasePrice();
   };
 
   handleDecrement = wine => {
@@ -87,8 +94,8 @@ class App extends Component {
     wines[index].value--;
     wines[index].total = wines[index].value * wines[index].casePrice;
     const totalPrice = wines[0].total + wines[1].total + wines[2].total;
-    this.setState({ wines });
-    this.setState({ totalPrice });
+    this.setState({ wines, totalPrice });
+    //this.handleCasePrice();
   };
 
   /*handleAllTotal = () => {
@@ -111,6 +118,7 @@ class App extends Component {
                 onIncrement={this.handleIncrement}
                 onDecrement={this.handleDecrement}
                 onTotal={this.handleTotal}
+                onChange={this.handleCasePrice}
               />
             </div>
           </div>

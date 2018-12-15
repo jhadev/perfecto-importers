@@ -12,9 +12,9 @@ class Navbar extends Component {
           </span>
           <button
             onClick={this.props.onReset}
-            className="btn btn-primary btn-sm ml-2"
+            className="btn reset badge-pill badge-secondary btn-sm ml-2"
           >
-            Reset
+            Empty Cart
           </button>
         </span>
       </nav>
