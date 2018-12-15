@@ -63,9 +63,11 @@ class App extends Component {
   handleReset = () => {
     const wines = this.state.wines.map(wine => {
       wine.value = 0;
+      wine.total = 0;
       return wine;
     });
     this.setState({ wines });
+    this.setState({ totalPrice: 0 });
   };
 
   handleIncrement = wine => {
