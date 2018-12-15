@@ -19,6 +19,12 @@ class Counters extends Component {
               wine={wine}
             >
               <h4>{wine.name}</h4>
+              <p>Size: {wine.size}</p>
+              <p>Vintage: {wine.vintage}</p>
+              <p>Country: {wine.country}</p>
+              <p>Region: {wine.region}</p>
+              <p>Varietal: {wine.varietal}</p>
+              <p>Tasting Notes: {wine.notes}</p>
               <p>Case Price: ${wine.casePrice}</p>
               <img className="wineImg" src={wine.image} alt="wineImg" />
             </Counter>

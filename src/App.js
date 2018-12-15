@@ -16,6 +16,8 @@ class App extends Component {
         casePrice: 180,
         vintage: 2015,
         image: "https://via.placeholder.com/200x200",
+        varietal: "ok",
+        notes: "ok",
         total: 0
       },
       {
@@ -28,6 +30,8 @@ class App extends Component {
         casePrice: 565,
         vintage: 2012,
         image: "https://via.placeholder.com/200x200",
+        varietal: "ok",
+        notes: "ok",
         total: 0
       },
       {
@@ -40,10 +44,12 @@ class App extends Component {
         casePrice: 160,
         vintage: 2017,
         image: "https://via.placeholder.com/200x200",
+        varietal: "ok",
+        notes: "ok",
         total: 0
       }
     ],
-    totalPrice: 1000
+    totalPrice: 0
   };
 
   handleTotal = wine => {
@@ -51,6 +57,7 @@ class App extends Component {
     const index = wines.indexOf(wine);
     wines[index].total = wines[index].value * wines[index].casePrice;
     this.setState({ wines });
+    this.handleAllTotal();
   };
 
   handleReset = () => {
@@ -75,6 +82,12 @@ class App extends Component {
     wines[index] = { ...wine };
     wines[index].value--;
     this.setState({ wines });
+  };
+
+  handleAllTotal = () => {
+    const wines = [...this.state.wines];
+    const totalPrice = wines[0].total + wines[1].total + wines[2].total;
+    this.setState({ totalPrice });
   };
 
   render() {
