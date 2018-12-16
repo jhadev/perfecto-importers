@@ -74,7 +74,7 @@ class App extends Component {
       wine.total = 0;
       return wine;
     });
-    this.setState({ wines, totalPrice: 0 });
+    this.setState({ wines, totalPrice: 0, totalCases: 0 });
   };
 
   handleIncrement = wine => {
