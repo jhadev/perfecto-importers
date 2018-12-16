@@ -50,7 +50,8 @@ class App extends Component {
         total: 0
       }
     ],
-    totalPrice: 0
+    totalPrice: 0,
+    totalCases: 0
   };
 
   handleTotal = wine => {
@@ -83,9 +84,10 @@ class App extends Component {
     wines[index].value++;
     wines[index].total = wines[index].value * wines[index].casePrice;
     const totalPrice = wines[0].total + wines[1].total + wines[2].total;
+    const totalCases = wines[0].value + wines[1].value + wines[2].value;
     wines[0].casePrice =
       wines[0].value <= 10 ? wines[0].casePrice : (wines[0].casePrice = 153);
-    this.setState({ wines, totalPrice });
+    this.setState({ wines, totalPrice, totalCases });
   };
 
   handleDecrement = wine => {
@@ -95,9 +97,10 @@ class App extends Component {
     wines[index].value--;
     wines[index].total = wines[index].value * wines[index].casePrice;
     const totalPrice = wines[0].total + wines[1].total + wines[2].total;
+    const totalCases = wines[0].value + wines[1].value + wines[2].value;
     wines[0].casePrice =
       wines[0].value >= 10 ? wines[0].casePrice : (wines[0].casePrice = 180);
-    this.setState({ wines, totalPrice });
+    this.setState({ wines, totalPrice, totalCases });
   };
 
   /*handleAllTotal = () => {
@@ -110,7 +113,11 @@ class App extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
-        <Navbar totalPrice={this.state.totalPrice} onReset={this.handleReset} />
+        <Navbar
+          totalPrice={this.state.totalPrice}
+          totalCases={this.state.totalCases}
+          onReset={this.handleReset}
+        />
         <div className="main container">
           <div className="row">
             <div className="col-md-6 col-12">
