@@ -26,7 +26,7 @@ class Counter extends Component {
             </span>
             <span
               style={{ fontSize: 14 }}
-              className="badge m-1 badge-secondary"
+              className="badge m-1 mb-2 badge-secondary"
             >
               {this.formatCount()} Cases
             </span>
