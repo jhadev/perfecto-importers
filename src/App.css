@@ -22,6 +22,10 @@ p {
   font-weight: bold !important;
 }
 
+.reset:active:focus {
+  border-color: white;
+}
+
 .counter-row {
   margin-top: -100px;
 }
@@ -48,7 +52,7 @@ p {
   }
 
   p {
-    line-height: 2;
+    line-height: 1.2;
   }
 }
 
