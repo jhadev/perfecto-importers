@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Counters from "./components/Counters";
 import Navbar from "./components/Navbar";
+import Titlebar from "./components/Titlebar";
 
 class App extends Component {
   state = {
@@ -111,6 +112,7 @@ class App extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
+        <Titlebar />
         <Navbar
           totalPrice={this.state.totalPrice}
           totalCases={this.state.totalCases}

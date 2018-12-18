@@ -16,10 +16,6 @@ p {
   margin-bottom: 20px;
 }
 
-.navbar-brand {
-  margin-left: -10px !important;
-}
-
 .reset {
   font-size: 10px !important;
   margin-top: -2px;
@@ -30,10 +26,16 @@ p {
   margin-top: -100px;
 }
 
+.company {
+  font-family: 'Courgette', cursive !important;
+  font-size: 30px !important;
+  margin-left: 4px;
+}
+
 .badge,
 .badge-pill,
 .badge-secondary {
-  margin-left: 10px !important;
+  margin-right: 4px !important;
 }
 
 @media screen and (max-width: 1200px) {
@@ -43,5 +45,13 @@ p {
 
   p {
     line-height: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .company {
+    font-family: 'Courgette', cursive !important;
+    font-size: 30px !important;
+    text-align: center !important;
   }
 }

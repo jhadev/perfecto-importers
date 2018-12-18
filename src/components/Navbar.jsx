@@ -6,7 +6,6 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-light sticky-nav bg-dark">
         <span className="navbar-brand mb-0 h1 text-light">
-          Perfecto Importers{" "}
           <span className="badge badge-pill badge-secondary">
             Your Total: ${this.props.totalPrice}
           </span>
