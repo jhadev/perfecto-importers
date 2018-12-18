@@ -9,7 +9,7 @@ class App extends Component {
     wines: [
       {
         id: 1,
-        name: "Rosso",
+        name: "Il Bosco di Grazia Rosso di Montalcino",
         size: "750mL",
         region: "Montalcino",
         country: "Italy",
@@ -24,7 +24,7 @@ class App extends Component {
       },
       {
         id: 2,
-        name: "Brunello",
+        name: "Il Bosco di Grazia Brunello di Montalcino",
         size: "750mL",
         region: "Montalcino",
         country: "Italy",
@@ -38,7 +38,7 @@ class App extends Component {
       },
       {
         id: 3,
-        name: "Rose",
+        name: "Il Bosco di Grazia Rosé",
         size: "750mL",
         region: "Montalcino",
         country: "Italy",
@@ -112,7 +112,6 @@ class App extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
-        <Titlebar />
         <Navbar
           totalPrice={this.state.totalPrice}
           totalCases={this.state.totalCases}
@@ -120,7 +119,7 @@ class App extends Component {
         />
         <div className="main container">
           <div className="row">
-            <div className="col-md-6 col-12">
+            <div className="col-lg-6 col-12">
               <Counters
                 wines={this.state.wines}
                 onReset={this.handleReset}
