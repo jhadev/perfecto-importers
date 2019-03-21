@@ -9,19 +9,49 @@
 
 p {
   font-size: 12px;
-  line-height: 0.5;
+  margin-bottom: 0px;
 }
 
 .name {
   margin-bottom: 20px;
 }
 
-.navbar-brand {
-  margin-left: -10px !important;
-}
-
 .reset {
   font-size: 10px !important;
   margin-top: -2px;
   font-weight: bold !important;
+}
+
+.counter-row {
+  margin-top: -100px;
+}
+
+.company {
+  font-family: 'Courgette', cursive !important;
+  font-size: 30px !important;
+  margin-left: 4px;
+}
+
+.badge,
+.badge-pill,
+.badge-secondary {
+  margin-right: 4px !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .counter-row {
+    margin-top: 0px;
+  }
+
+  p {
+    line-height: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .company {
+    font-family: 'Courgette', cursive !important;
+    font-size: 30px !important;
+    text-align: center !important;
+  }
 }
