@@ -31,7 +31,10 @@ class Landing extends Component {
           <h1 style={{ transform: 'rotate(-10deg)' }}>BUY OUR WINE</h1>
         </div>
         <div style={columnTwo}>
-          <h1>I AM ON THE RIGHT SIDE AND I WANT TO BE 3 COLUMNS TELLING YOU WHY, WHERE, AND HOW</h1>
+          <h1>
+            I AM ON THE RIGHT SIDE AND I WANT TO BE 3 COLUMNS OF EQUAL HEIGHT STACKED ON EACH OTHER
+            TELLING YOU WHY, WHERE, AND HOW
+          </h1>
         </div>
       </div>
     );
